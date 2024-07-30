@@ -21,7 +21,7 @@ namespace DBCrudApp.Repositories
 
         public List<Customer> GetData()
         {
-            string commandString = "Select * FROM Northwind.dbo.Customers;";
+            string commandString = "Select * FROM Customers;";
 
             var connection = new SqlConnection(_connectionString);
             var command = new SqlCommand(commandString, connection);

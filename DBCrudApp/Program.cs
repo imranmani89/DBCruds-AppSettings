@@ -1,4 +1,5 @@
 ﻿using DBCrudApp.Entities;
+using DBCrudApp.Extensions;
 using DBCrudApp.Models;
 using DBCrudApp.Repositories;
 using Microsoft.Extensions.Configuration;
@@ -31,6 +32,7 @@ public static class Program
                     foreach (var item in list)
                     {
                         Console.WriteLine($"{item.EmployeeID}\t {item.FirstName} {item.LastName}\t {item.Title}\t {item.TitleOfCourtesy}\t {item.BirthDate}\t {item.HireDate}\t {item.Address}\t {item.City}\t {item.Region}\t {item.PostalCode}\t  {item.Country}\t {item.HomePhone}\t {item.Extension}\t {item.ReportsTo}\t  {item.PhotoPath}");
+                        Console.WriteLine($"the middle index is {list.GetMiddleIndex()}");
                     }
                     break;
                 case 2:
@@ -47,6 +49,8 @@ public static class Program
                     {
 
                         Console.WriteLine($"{item.CustomerID}\t{item.CompanyName}\t{item.ContactName}\t{item.ContactTitle}\t{item.Address}\t{item.City}\t{item.Region}\t{item.PostalCode}\t{item.Country}\t{item.Phone}\t{item.Fax}");
+                        Console.WriteLine($"the middle index is {list2.GetMiddleIndex()}");
+                        Console.WriteLine($"connectionString length is {new CustomerRepository(config).GetConnectionStringCount()}");
                     }
                     break;
                 case 4:
